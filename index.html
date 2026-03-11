@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Secret Level</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1b1b2f,#162447);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.box{
+    background:rgba(0,0,0,0.6);
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+input{
+    padding:10px;
+    font-size:16px;
+    border-radius:6px;
+    border:none;
+    margin-top:10px;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    margin-left:10px;
+    border:none;
+    border-radius:6px;
+    background:#ffb400;
+    cursor:pointer;
+}
+
+#certificate{
+    display:none;
+    margin-top:30px;
+}
+
+img{
+    max-width:600px;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🎮 LEVEL COMPLETE</h1>
+<p>Введите код доступа, чтобы открыть награду</p>
+
+<input type="password" id="password" placeholder="Введите пароль">
+<button onclick="checkPassword()">Открыть</button>
+
+<p id="error" style="color:#ff8080;"></p>
+
+<div id="certificate">
+<h2>🏆 Achievement unlocked</h2>
+<p>Лучший муж-разработчик</p>
+
+<img src="certificate.png">
+
+<p>Награда: <b>500€</b></p>
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+const correctPassword = "MEOW500";
+const input = document.getElementById("password").value;
+
+if(input === correctPassword){
+document.getElementById("certificate").style.display = "block";
+document.getElementById("error").innerText = "";
+}else{
+document.getElementById("error").innerText = "Неверный пароль";
+}
+
+}
+
+</script>
+
+</body>
+</html>
